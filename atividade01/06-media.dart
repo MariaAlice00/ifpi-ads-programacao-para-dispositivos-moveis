@@ -16,5 +16,5 @@ void main() {
 
   final String res = resultado(notaUm, notaDois, notaTres);
 
-  print('Você está $res');
+  print('Você está ${res}');
 }

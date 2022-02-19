@@ -5,6 +5,6 @@ void main() {
 
   for (int i = 1; i <= n; i++) {
     ponto = p * i;
-    print('$ponto $i');
+    print('${ponto} ${i}');
   }
 }

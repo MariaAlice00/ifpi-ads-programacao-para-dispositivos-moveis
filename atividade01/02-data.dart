@@ -3,5 +3,5 @@ void main() {
   var mes = 'fevereiro';
   var ano = 2022;
 
-  print('$dia/$mes/$ano');
+  print('${dia}/${mes}/${ano}');
 }

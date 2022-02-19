@@ -9,7 +9,7 @@ String inteiro(n1) {
 }
 
 void main() {
-  var n1 = 10.4;
+  var n1 = 10;
   var n2 = 3;
 
   print(n1 % n2);

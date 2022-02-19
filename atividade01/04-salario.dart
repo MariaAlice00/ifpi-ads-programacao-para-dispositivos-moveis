@@ -9,7 +9,7 @@ void main() {
   String salarioAno2String = salarioAno2.toStringAsFixed(2);
   String salarioAno3String = salarioAno3.toStringAsFixed(2);
 
-  print('Salário daqui 1 ano: R\$ $salarioAno1String');
-  print('Salário daqui 2 anos: R\$ $salarioAno2String');
-  print('Salário daqui 3 anos: R\$ $salarioAno3String');
+  print('Salário daqui 1 ano: R\$ ${salarioAno1String}');
+  print('Salário daqui 2 anos: R\$ ${salarioAno2String}');
+  print('Salário daqui 3 anos: R\$ ${salarioAno3String}');
 }
