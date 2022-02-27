@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() async {
-  final semicolon = ';'.codeUnitAt(0);
+  final semicolon = '='.codeUnitAt(0);
   final result = <int>[];
 
   final script = File(Platform.script.toFilePath());

@@ -1,0 +1,5 @@
+total 6
+-rw-r--r-- 1 Maria Alice 197121 221 fev 26 18:43 ex06.dart
+-rw-r--r-- 1 Maria Alice 197121 390 fev 26 18:48 ex07.dart
+-rw-r--r-- 1 Maria Alice 197121 424 fev 27 09:01 ex08.dart
+-rw-r--r-- 1 Maria Alice 197121   0 fev 27 16:59 output.txt
