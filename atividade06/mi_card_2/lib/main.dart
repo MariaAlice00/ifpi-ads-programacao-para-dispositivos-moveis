@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         body: SafeArea(
             child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              color: Colors.purple[100],
-              height: 300,
-              child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                color: Colors.purple[100],
+                height: 300,
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Column(
@@ -66,14 +66,17 @@ class MyApp extends StatelessWidget {
                               children: <Widget>[
                                 buildCard('+55 86 99999 9999', Icons.phone),
                                 buildCard('alice@email.com', Icons.email),
-                              ]),
-                        ),
-                      ],
-                    )
-                  ]),
+                              ]
+                            ),
+                          ),
+                        ],
+                      )
+                    ]
+                  ),
+                )
+              ],
             )
-          ],
-        )),
+        ),
       ),
     );
   }
