@@ -16,6 +16,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _numero = 1;
+  Color _iconColor = Colors.grey;
 
   void _mudaNumero(int valor) {
     setState(() {
@@ -33,66 +34,76 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          width: double.infinity,
-          child: Column(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.purpleAccent,
-                    ),
-                    child: Text('<-'),
-                    onPressed: () {
-                      _mudaNumero(-1);
-                    },
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.purpleAccent,
-                    ),
-                    child: Text('->'),
-                    onPressed: () {
-                      _mudaNumero(1);
-                    },
-                  ),
-                ],
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.purpleAccent,
+                ),
+                child: Text('<-'),
+                onPressed: () {
+                  _mudaNumero(-1);
+                },
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset('images/imagem$_numero.jpg'),
-                ],
+              SizedBox(
+                width: 10,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Imagem $_numero', style: TextStyle(fontSize: 20),),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.purple,
-                    ),
-                    child: Text('LIKE'),
-                    onPressed: () {
-                      print('Like na imagem $_numero');
-                    },
-                  ),
-                ],
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.purpleAccent,
+                ),
+                child: Text('->'),
+                onPressed: () {
+                  _mudaNumero(1);
+                },
               ),
             ],
           ),
-      )
-    );
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.asset('images/imagem$_numero.jpg'),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Imagem $_numero',
+                style: TextStyle(fontSize: 20),
+              ),
+            ],
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.purple,
+                ),
+                child: Text('LIKE'),
+                onPressed: () {
+                  print('Like na imagem $_numero');
+                },
+              ),
+              IconButton(
+                  icon: Icon(Icons.favorite, color: _iconColor),
+                  onPressed: () {
+                    setState(() {
+                      _iconColor = Colors.red;
+                    });
+                  }
+              ),
+            ],
+          ),
+        ],
+      ),
+    ));
   }
 }
