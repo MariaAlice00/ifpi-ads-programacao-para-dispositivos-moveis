@@ -66,9 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return ListView.builder(
         itemCount: albums.length,
         itemBuilder: (context, index) {
-          int id = albums[index].id;
-          String texto = "Album $id clicado";
-          return PostTile(post: this.albums[index]);
+          return PostTile(post: albums[index]);
         });
   }
 }
