@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: const MyHomePage(title: 'Albums List'),
+      home: const MyHomePage(title: 'Posts List'),
     );
   }
 }
@@ -37,19 +37,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var albums = [];
+  var posts = [];
 
-  _getAlbums() {
+  _getPosts() {
     API.getPosts().then((response) {
       setState(() {
         Iterable lista = json.decode(response.body);
-        albums = lista.map((model) => Post.fromJson(model)).toList();
+        posts = lista.map((model) => Post.fromJson(model)).toList();
       });
     });
   }
 
   _MyHomePageState() {
-    _getAlbums();
+    _getPosts();
   }
 
   @override
@@ -58,15 +58,16 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: listaAlbums(),
+      body: listaPosts(),
     );
   }
 
-  listaAlbums() {
+  listaPosts() {
     return ListView.builder(
-        itemCount: albums.length,
+        itemCount: posts.length,
         itemBuilder: (context, index) {
-          return PostTile(post: albums[index]);
+          return PostTile(post: posts[index]);
+          
         });
   }
 }
