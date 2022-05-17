@@ -1,5 +1,13 @@
-# Lista de questões
+<h1>Lista de questões</h1>
 
-## [Questão 4](https://github.com/MariaAlice00/ifpi-ads-programacao-para-dispositivos-moveis/tree/main/atividade12/turn_on_off)
-![](assets/04-off.png)
-![](assets/04-on.png)
+<ul>
+    <li>
+       <p>
+           <a href="https://github.com/MariaAlice00/ifpi-ads-programacao-para-dispositivos-moveis/tree/main/atividade12/turn_on_off">Questão 4</a>
+       </p>
+        <p float="left">
+            <img src="assets/04-off.png" width="100" alt="">
+            <img src="assets/04-on.png" width="100" alt="">
+        </p>
+    </li>
+</ul>
