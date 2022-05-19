@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  static const String _title = 'Checkbox';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Focus',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.yellow,
+      title: _title,
+      home: Scaffold(
+        appBar: AppBar(title: const Text(_title)),
+        body: const Center(
+          child: MyStatefulWidget(),
+        ),
       ),
-      home: const MyHomePage(title: 'Focus'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   bool isChecked1 = false;
   bool isChecked2 = false;
   bool isChecked3 = false;
@@ -106,7 +107,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ListTile(
           leading: Checkbox(
             checkColor: Colors.white,
-            tristate: false,
             fillColor: MaterialStateProperty.resolveWith(getColor),
             value: isChecked4,
             onChanged: (bool? value) {
