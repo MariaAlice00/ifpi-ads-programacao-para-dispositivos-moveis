@@ -1,51 +1,64 @@
+// ignore_for_file: prefer_final_fields, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  static const String _title = 'Zoom Image';
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: _title,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const MyStatefulWidget(),
+      title: 'Checkbox',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.cyan,
       ),
+      home: const MyHomePage(title: 'Checkbox'),
     );
   }
 }
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
 
   @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  double _currentSize = 0;
+class _MyHomePageState extends State<MyHomePage> {
+  double _currentSize = 100;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Slider(
-          value: _currentSize,
-          max: 600,
-          divisions: 5,
-          label: _currentSize.round().toString(),
-          onChanged: (double value) {
-            setState(() {
-              _currentSize = value;
-            });
-          },
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
         ),
-        Image.asset('images/paisagem.jpg', width: _currentSize,)
-      ],
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Transform.scale(
+            scale: _currentSize / 100,
+            child: Image.network('https://picsum.photos/250?image=9'),
+          ),
+          Slider(
+            value: _currentSize,
+            min: 100,
+            max: 700,
+            divisions: 5,
+            onChanged: (double value) {
+              setState(() {
+                _currentSize = value;
+              });
+            },
+          ),
+        ]
+      )
     );
   }
 }
