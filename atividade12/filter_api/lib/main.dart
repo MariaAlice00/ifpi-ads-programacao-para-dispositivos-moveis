@@ -36,7 +36,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   var albums = [];
-  var outros = [];
 
   _getAlbums() {
     API.getAlbums().then((response) {
