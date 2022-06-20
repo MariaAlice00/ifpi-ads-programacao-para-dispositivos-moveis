@@ -32,7 +32,7 @@ void main() {
 
     usecase = GetPeopleById(mockPeopleRepository);
 
-    final result = await usecase.execute(idExample);
+    final result = await usecase(Params(id: idExample));
     expect(result, Right(peopleExample));
 
     verify(mockPeopleRepository.getPeopleById(idExample));

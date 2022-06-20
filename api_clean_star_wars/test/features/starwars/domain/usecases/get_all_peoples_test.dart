@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:api_clean_star_wars/core/usecases/usecase.dart';
 import 'package:api_clean_star_wars/features/starwars/domain/entities/people.dart';
 import 'package:api_clean_star_wars/features/starwars/domain/repositories/people_repository.dart';
 import 'package:api_clean_star_wars/features/starwars/domain/usecases/get_all_peoples.dart';
@@ -30,7 +31,7 @@ void main() {
 
     usecase = GetAllPeoples(mockPeopleRepository);
 
-    final result = await usecase.execute();
+    final result = await usecase(NoParams());
     expect(result, Right(peopleExample));
 
     verify(mockPeopleRepository.getAllPeoples());
