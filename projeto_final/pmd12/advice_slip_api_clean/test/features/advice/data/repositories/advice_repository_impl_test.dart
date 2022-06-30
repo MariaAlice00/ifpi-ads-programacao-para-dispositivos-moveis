@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:advice_slip_api_clean/core/platform/network_info.dart';
 import 'package:advice_slip_api_clean/features/advice/data/datasources/advice_local_data_source.dart';
 import 'package:advice_slip_api_clean/features/advice/data/datasources/advice_remote_data_source.dart';

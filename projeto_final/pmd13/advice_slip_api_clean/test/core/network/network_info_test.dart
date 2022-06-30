@@ -1,6 +1,5 @@
-// ignore_for_file: import_of_legacy_library_into_null_safe
-
-import 'package:advice_slip_api_clean/core/platform/network_info.dart';
+// @dart=2.9
+import 'package:advice_slip_api_clean/core/network/network_info.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -22,11 +21,8 @@ void main() {
 
         when(mockDataConnectionChecker.hasConnection)
             .thenAnswer((_) => tHasConnectionFuture);
-
         final result = networkInfo.isConnected;
-
         verify(mockDataConnectionChecker.hasConnection);
-
         expect(result, tHasConnectionFuture);
       },
     );

@@ -1,3 +1,4 @@
+// @dart=2.9
 import '../models/advice_model.dart';
 
 abstract class AdviceLocalDataSource {

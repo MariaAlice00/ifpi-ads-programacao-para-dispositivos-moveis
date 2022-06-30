@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:advice_slip_api_clean/features/advice/data/models/advice_model.dart';
 import 'package:advice_slip_api_clean/features/advice/domain/usecases/get_concrete_advice.dart.dart';
 import 'package:advice_slip_api_clean/features/advice/domain/usecases/get_random_advice.dart';
