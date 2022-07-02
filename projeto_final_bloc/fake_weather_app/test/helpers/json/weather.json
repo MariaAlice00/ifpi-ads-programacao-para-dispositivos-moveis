@@ -1,0 +1,12 @@
+{
+    "weather": [
+    {
+        "main": "Clouds",
+        "description": "few clouds"
+    }
+    ],
+    "main": {
+        "temp": 302.28
+    },
+    "name": "Teresina"
+}

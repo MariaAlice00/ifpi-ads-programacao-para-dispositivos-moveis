@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
-import '../data/datasources/remote_data_source.dart';
+import '../data/datasources/remote_datasource.dart';
 import '../data/repositories/weather_repository_impl.dart';
 import '../domain/repositories/weather_repository.dart';
 import '../domain/usecases/get_current_weather.dart';

@@ -8,7 +8,7 @@ import '../../core/errors/exception.dart';
 import '../../core/errors/failure.dart';
 import '../../domain/entities/weather.dart';
 import '../../domain/repositories/weather_repository.dart';
-import '../datasources/remote_data_source.dart';
+import '../datasources/remote_datasource.dart';
 
 class WeatherRepositoryImpl implements WeatherRepository {
   final RemoteDataSource remoteDataSource;

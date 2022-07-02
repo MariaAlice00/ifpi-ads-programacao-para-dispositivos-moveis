@@ -17,6 +17,10 @@ dependencies:
   http:
   rxdart:
   get_it:
+  mockito:
+  mocktail:
+  build_runner:
+  bloc_test:
 
   cupertino_icons: ^1.0.2
 
